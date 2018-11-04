@@ -9,7 +9,7 @@ var timesAPI = {
     var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
     url += '?' + $.param({'api-key': "d7702ba6246c41f19ef23e6ed45b0c05"});
     $.ajax({
-      url: queryURL,
+      url: url,
       method: "GET"
     }) .then(function(response) {
       console.log(response);
