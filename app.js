@@ -32,6 +32,7 @@ $(document).ready(function () {
     numRecords = $('#records').val();
     startYear = $('#startYear').val();
     endYear = $('#endYear').val();
+    document.getElementById("form").reset();
     
     console.log(term + ' ' + numRecords + ' ' + startYear + ' ' + endYear);
 
@@ -39,8 +40,7 @@ $(document).ready(function () {
   })
 
   $('#clearButton').click(function () {
-
-    // code to clear searchboxes goes here
-
+    console.log('click');
+    $("#resultsBox").empty();
   })
 });
