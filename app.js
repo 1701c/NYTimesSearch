@@ -12,14 +12,13 @@ var timesAPI = {
       url: url,
       method: "GET"
     }) .then(function(response) {
-      console.log(response);
-      for (i = 0; i < response.length; i++)
+      for (i = 0; i < response.response.length; i++)
         titleDiv = $("<h3>");
         urlDiv = $("<p>");
         authorDiv = $("<p>");
         yearDiv = $("<p>");
-        // urlDiv.append(response.docs[i].web_url)
-        console.log(response.docs[i]);
+        urlDiv.append(response.response.docs[i].web_url)
+        console.log(response.response.docs[i].web_url);
   }).fail(function(err) {
     throw err;
     });
@@ -33,14 +32,11 @@ $(document).ready(function () {
     startYear = $('#startYear').val();
     endYear = $('#endYear').val();
     document.getElementById("form").reset();
-    
     console.log(term + ' ' + numRecords + ' ' + startYear + ' ' + endYear);
-
     timesAPI.requestData(term, numRecords, startYear, endYear);
   })
 
   $('#clearButton').click(function () {
-    console.log('click');
     $("#resultsBox").empty();
   })
 });
